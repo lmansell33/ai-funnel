@@ -80,118 +80,201 @@ const faqs = [
 
 export default function Home() {
   return (
-    <div className="bg-white text-slate-900">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100">
+    <div style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+
+      {/* ── Nav ── */}
+      <nav
+        style={{ background: "rgba(12,10,8,0.92)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+        className="sticky top-0 z-50"
+      >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-semibold text-slate-900 text-sm tracking-tight">
+          <span
+            className="font-display text-base font-semibold tracking-tight"
+            style={{ color: "var(--color-cream)", fontFamily: "var(--font-display), Georgia, serif" }}
+          >
             AI Workflow Audit
           </span>
           <a
             href="#audit"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors duration-150"
+            className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg"
           >
             Book Free Audit
           </a>
         </div>
       </nav>
 
-      {/* 1. Hero */}
-      <section className="pt-20 pb-24 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-6">
-            For small businesses drowning in admin work
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight mb-6">
-            Before You Hire Another Admin, See What AI Can Already Handle
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-4 max-w-3xl mx-auto">
-            We review how your business runs, identify the repetitive work
-            costing your team hours every week, and show you what can be
-            automated using the tools you already have.
-          </p>
-          <p className="text-slate-500 text-base mb-10">
-            Follow-up. Reporting. CRM updates. Data entry. Reminders. Document
-            collection. Internal handoffs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="#audit"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-base px-8 py-4 rounded-xl transition-colors duration-150 w-full sm:w-auto text-center"
+      {/* ── 1. Hero ── */}
+      <section style={{ background: "var(--color-canvas)" }} className="relative overflow-hidden">
+        {/* Decorative radial glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 70% 50% at 60% 50%, rgba(200,151,58,0.06) 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto px-6 py-28 lg:py-36 grid lg:grid-cols-[1fr_auto] gap-16 items-center relative">
+          <div>
+            <p
+              className="hero-1 text-xs font-semibold tracking-[0.18em] uppercase mb-7"
+              style={{ color: "var(--color-amber)" }}
             >
-              Find Out What You Can Automate
-            </a>
-            <a
-              href="#automate"
-              className="text-slate-700 hover:text-slate-900 font-semibold text-base px-8 py-4 rounded-xl border border-slate-200 hover:border-slate-300 transition-colors duration-150 w-full sm:w-auto text-center"
+              For small businesses drowning in admin work
+            </p>
+            <h1
+              className="hero-2 font-display leading-[1.04] tracking-tight mb-7"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontSize: "clamp(2.6rem, 5vw, 4.5rem)",
+                fontWeight: 700,
+                color: "var(--color-cream)",
+                fontVariationSettings: '"opsz" 144',
+              }}
             >
-              See What We Automate
-            </a>
+              Before You Hire Another Admin, See What AI Can Already Handle
+            </h1>
+            <p
+              className="hero-3 text-lg leading-relaxed mb-3 max-w-2xl"
+              style={{ color: "var(--color-cream-2)" }}
+            >
+              We review how your business runs, identify the repetitive work
+              costing your team hours every week, and show you what can be
+              automated using the tools you already have.
+            </p>
+            <p
+              className="hero-4 text-sm mb-10"
+              style={{ color: "rgba(122,106,86,0.9)" }}
+            >
+              Follow-up · Reporting · CRM updates · Data entry · Reminders · Document collection · Internal handoffs
+            </p>
+            <div className="hero-5 flex flex-col sm:flex-row gap-4 items-start">
+              <a href="#audit" className="btn-primary text-sm px-7 py-3.5 rounded-xl">
+                Find Out What You Can Automate
+              </a>
+              <a href="#automate" className="btn-secondary text-sm px-7 py-3.5 rounded-xl font-semibold">
+                See What We Automate
+              </a>
+            </div>
+            <p className="hero-5 text-xs mt-4" style={{ color: "rgba(122,106,86,0.7)" }}>
+              Free audit · No obligation · Clear roadmap and fixed-price quote if there&apos;s a fit
+            </p>
           </div>
-          <p className="text-sm text-slate-400 mt-4">
-            Free audit. No obligation. If there&apos;s a fit, you&apos;ll get a
-            clear roadmap and fixed-price quote.
-          </p>
+
+          {/* Decorative stat — desktop only */}
+          <div className="hidden lg:block text-right select-none">
+            <p
+              className="font-display leading-none font-bold"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontSize: "10rem",
+                color: "var(--color-amber)",
+                opacity: 0.12,
+                fontVariationSettings: '"opsz" 144',
+              }}
+            >
+              500
+            </p>
+            <p className="text-xs tracking-[0.2em] uppercase font-semibold -mt-6" style={{ color: "var(--color-amber)", opacity: 0.5 }}>
+              hours / year
+            </p>
+            <p className="text-xs mt-2" style={{ color: "rgba(122,106,86,0.5)" }}>
+              of work a system could handle
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 2. Business Type */}
-      <section className="py-20 px-6 bg-white">
+      {/* ── 2. Business Type ── */}
+      <section style={{ background: "var(--color-surface)" }} className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+          <h2
+            className="font-display mb-5"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Built for Service-Based Small Businesses
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-3xl mx-auto">
-            This is for businesses where admin work, follow-up, reporting,
-            scheduling, and internal handoffs are starting to slow the team
-            down.
+          <p className="text-base leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
+            This is for businesses where admin work, follow-up, reporting, scheduling, and
+            internal handoffs are starting to slow the team down.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2.5">
             {[
-              "Law firms",
-              "Accounting firms",
-              "Home service companies",
-              "Agencies",
-              "Medical offices",
-              "Real estate teams",
-              "Property managers",
-              "Consultants",
+              "Law firms", "Accounting firms", "Home service companies",
+              "Agencies", "Medical offices", "Real estate teams",
+              "Property managers", "Consultants",
             ].map((type) => (
               <span
                 key={type}
-                className="bg-slate-100 text-slate-700 text-sm font-medium px-4 py-2 rounded-full"
+                className="text-sm font-medium px-4 py-2 rounded-full"
+                style={{
+                  background: "var(--color-ghost)",
+                  color: "var(--color-cream-2)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                }}
               >
                 {type}
               </span>
             ))}
-            <span className="bg-slate-100 text-slate-500 text-sm px-4 py-2 rounded-full italic">
+            <span
+              className="text-sm italic px-4 py-2 rounded-full"
+              style={{ color: "rgba(122,106,86,0.6)" }}
+            >
               and other service businesses with repeatable workflows
             </span>
           </div>
         </div>
       </section>
 
-      {/* 3. Problem */}
-      <section className="py-20 px-6 bg-slate-50">
+      {/* ── 3. Problem ── LIGHT SECTION ── */}
+      <section style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+          <div className="text-center mb-14">
+            <h2
+              className="font-display mb-5"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                fontWeight: 700,
+                color: "var(--color-ink)",
+                fontVariationSettings: '"opsz" 72',
+              }}
+            >
               Manual Work Costs More Than Time
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-4">
+            <p className="text-base leading-relaxed mb-5 max-w-2xl mx-auto" style={{ color: "var(--color-ink-2)" }}>
               Repetitive work does not just eat hours. It creates missed
               opportunities, mistakes, delays, and pressure to hire before your
               systems are ready.
             </p>
-            <p className="text-lg text-slate-700 font-medium">
+            <p
+              className="text-base font-medium max-w-2xl mx-auto leading-relaxed"
+              style={{ color: "var(--color-ink)" }}
+            >
               If one person on your team spends just 10 hours a week on
               repetitive admin, that&apos;s more than{" "}
-              <span className="text-indigo-600 font-bold">500 hours a year</span>{" "}
+              <span
+                className="font-display font-bold"
+                style={{ fontFamily: "var(--font-display), Georgia, serif", color: "var(--color-amber)", fontVariationSettings: '"opsz" 24' }}
+              >
+                500 hours a year
+              </span>{" "}
               spent on work a system could handle.
             </p>
           </div>
-          <div className="bg-white rounded-2xl border border-slate-200 p-8">
-            <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-6">
+
+          <div
+            className="rounded-2xl p-8"
+            style={{ background: "var(--color-parchment-2)", border: "1px solid rgba(30,20,8,0.08)" }}
+          >
+            <p
+              className="text-xs font-semibold tracking-[0.15em] uppercase mb-6"
+              style={{ color: "var(--color-ink-2)" }}
+            >
               Common signs your business has automation opportunities
             </p>
             <ul className="space-y-4">
@@ -205,41 +288,49 @@ export default function Home() {
                 "Every bit of growth feels like it requires hiring another person just to keep up.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 text-indigo-500 flex-shrink-0">→</span>
-                  <span className="text-slate-700">{item}</span>
+                  <span style={{ color: "var(--color-amber)" }} className="flex-shrink-0 mt-0.5 font-bold">→</span>
+                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <p className="text-center text-slate-600 mt-8 text-base">
-            Before you hire another admin, add another tool, or keep patching
-            the problem manually —{" "}
-            <span className="font-semibold text-slate-800">
+          <p className="text-center text-sm mt-8" style={{ color: "var(--color-ink-2)" }}>
+            Before you hire another admin, add another tool, or keep patching the problem manually —{" "}
+            <span className="font-semibold" style={{ color: "var(--color-ink)" }}>
               we&apos;ll show you what can be automated first.
             </span>
           </p>
         </div>
       </section>
 
-      {/* 4. Solution */}
-      <section className="py-20 px-6 bg-white">
+      {/* ── 4. Solution ── */}
+      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+          <h2
+            className="font-display mb-6"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Less Manual Work. Fewer Things Slipping Through.
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-6 max-w-3xl mx-auto">
+          <p className="text-base leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
             We identify the repeatable workflows in your business and help
             automate them using the tools you already have — your CRM, email,
             spreadsheets, forms, calendars, project management software,
             accounting tools, and AI.
           </p>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-3xl mx-auto">
+          <p className="text-base leading-relaxed mb-12 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
             You do not need to replace your entire tech stack. We build around
             what you already use, then create workflows that reduce manual steps,
             improve follow-up, and give you better visibility into what is
             happening inside your business.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {[
               "Less manual work",
               "Fewer missed follow-ups",
@@ -249,9 +340,13 @@ export default function Home() {
             ].map((result) => (
               <div
                 key={result}
-                className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-center"
+                className="rounded-xl p-4 text-center"
+                style={{
+                  background: "var(--color-amber-dim)",
+                  border: "1px solid rgba(200,151,58,0.15)",
+                }}
               >
-                <p className="text-indigo-800 font-semibold text-sm leading-snug">
+                <p className="text-xs font-semibold leading-snug" style={{ color: "var(--color-amber-light)" }}>
                   {result}
                 </p>
               </div>
@@ -260,13 +355,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. How the Audit Works */}
-      <section className="py-20 px-6 bg-slate-50">
+      {/* ── 5. How the Audit Works ── */}
+      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-14">
+          <h2
+            className="font-display text-center mb-14"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Three Steps, No Guesswork
           </h2>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-3 gap-6">
             {[
               {
                 step: "01",
@@ -286,42 +390,69 @@ export default function Home() {
             ].map(({ step, title, body }) => (
               <div
                 key={step}
-                className="bg-white rounded-2xl border border-slate-200 p-8"
+                className="card-lift rounded-2xl p-8"
+                style={{
+                  background: "var(--color-surface-2)",
+                  border: "1px solid rgba(255,255,255,0.05)",
+                }}
               >
-                <p className="text-4xl font-bold text-indigo-100 mb-4">
+                <p
+                  className="font-display font-bold leading-none mb-5"
+                  style={{
+                    fontFamily: "var(--font-display), Georgia, serif",
+                    fontSize: "3.5rem",
+                    color: "var(--color-amber)",
+                    opacity: 0.25,
+                    fontVariationSettings: '"opsz" 72',
+                  }}
+                >
                   {step}
                 </p>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
+                <h3 className="font-semibold mb-3 text-base" style={{ color: "var(--color-cream)" }}>
                   {title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{body}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
+                  {body}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. What We Can Automate */}
-      <section id="automate" className="py-20 px-6 bg-white">
+      {/* ── 6. What We Can Automate ── */}
+      <section id="automate" style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-14">
+          <h2
+            className="font-display text-center mb-14"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Real Examples of Work We Take Off Your Plate
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {automateCategories.map(({ title, items }) => (
-              <div key={title} className="bg-slate-50 rounded-2xl p-6">
-                <h3 className="font-bold text-slate-900 text-base mb-4">
+              <div
+                key={title}
+                className="card-lift rounded-2xl p-6"
+                style={{
+                  background: "var(--color-surface)",
+                  border: "1px solid rgba(255,255,255,0.05)",
+                  borderTop: "2px solid var(--color-amber)",
+                }}
+              >
+                <h3 className="font-semibold text-sm mb-5" style={{ color: "var(--color-amber)" }}>
                   {title}
                 </h3>
                 <ul className="space-y-2.5">
                   {items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm text-slate-600"
-                    >
-                      <span className="text-indigo-400 mt-0.5 flex-shrink-0">
-                        ·
-                      </span>
+                    <li key={item} className="flex items-start gap-2 text-xs leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
+                      <span style={{ color: "rgba(200,151,58,0.4)" }} className="flex-shrink-0 mt-0.5">·</span>
                       {item}
                     </li>
                   ))}
@@ -332,45 +463,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. After the Audit */}
-      <section className="py-20 px-6 bg-indigo-600">
+      {/* ── 7. After the Audit ── */}
+      <section
+        className="py-24 px-6"
+        style={{
+          background: "var(--color-amber-dim)",
+          borderTop: "1px solid rgba(200,151,58,0.12)",
+          borderBottom: "1px solid rgba(200,151,58,0.12)",
+        }}
+      >
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2
+            className="font-display mb-6"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             When You&apos;re Ready to Build It, We Can
           </h2>
-          <p className="text-indigo-100 text-lg leading-relaxed mb-6">
+          <p className="text-base leading-relaxed mb-5" style={{ color: "var(--color-cream-2)" }}>
             The audit shows you what to automate and where to start. If you want
             those workflows built, we can build them for you.
           </p>
-          <p className="text-indigo-100 text-lg leading-relaxed mb-8">
+          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-cream-2)" }}>
             Most builds fall into lead follow-up, customer onboarding, internal
             task routing, reporting dashboards, CRM cleanup, or document
-            collection — but the scope is always shaped by your actual
-            workflows.
+            collection — but the scope is always shaped by your actual workflows.
           </p>
-          <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-6 py-4">
-            <span className="text-white font-semibold text-base">
+          <div
+            className="inline-flex items-center gap-3 rounded-xl px-7 py-4"
+            style={{
+              background: "rgba(200,151,58,0.1)",
+              border: "1px solid rgba(200,151,58,0.25)",
+            }}
+          >
+            <span className="text-sm font-semibold" style={{ color: "var(--color-amber-light)" }}>
               Every build is quoted at a fixed price before work begins.
             </span>
           </div>
         </div>
       </section>
 
-      {/* 8. Proof */}
-      <section className="py-20 px-6 bg-white">
+      {/* ── 8. Proof ── LIGHT SECTION ── */}
+      <section style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-10">
+          <h2
+            className="font-display text-center mb-10"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-ink)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Real Workflow Problems. Practical Automation Solutions.
           </h2>
-          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-10">
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+          <div
+            className="rounded-2xl p-10 relative"
+            style={{
+              background: "var(--color-parchment-2)",
+              border: "1px solid rgba(30,20,8,0.08)",
+              borderLeft: "3px solid var(--color-amber)",
+            }}
+          >
+            <p
+              className="font-display italic text-4xl leading-none mb-6 select-none"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                color: "var(--color-amber)",
+                opacity: 0.25,
+                fontVariationSettings: '"opsz" 72',
+              }}
+            >
+              &ldquo;
+            </p>
+            <p className="text-base leading-relaxed mb-5" style={{ color: "var(--color-ink)" }}>
               We are currently helping a professional service firm reduce manual
               bookkeeping and reconciliation steps by mapping their weekly and
               monthly reporting process, identifying repetitive handoffs, and
-              building automation around the work their team was previously
-              doing by hand.
+              building automation around the work their team was previously doing
+              by hand.
             </p>
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-sm leading-relaxed" style={{ color: "var(--color-ink-2)" }}>
               The goal is simple: reduce repetitive admin, improve accuracy, and
               give the team back time without forcing them to replace the tools
               they already use.
@@ -379,11 +558,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9 & 10. Who This Is / Isn't For */}
-      <section className="py-20 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl border border-slate-200 p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+      {/* ── 9 & 10. Fit / Not Fit ── */}
+      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-6">
+          <div
+            className="rounded-2xl p-8"
+            style={{
+              background: "var(--color-surface-2)",
+              border: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <h2
+              className="font-display mb-7 text-xl"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontWeight: 700,
+                color: "var(--color-cream)",
+                fontVariationSettings: '"opsz" 24',
+              }}
+            >
               This Is a Good Fit If…
             </h2>
             <ul className="space-y-4">
@@ -396,16 +589,28 @@ export default function Home() {
                 "You want practical automation, not AI hype.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="text-emerald-500 font-bold flex-shrink-0 mt-0.5">
-                    ✓
-                  </span>
-                  <span className="text-slate-700 text-sm">{item}</span>
+                  <span className="text-xs font-bold flex-shrink-0 mt-1" style={{ color: "var(--color-amber)" }}>✓</span>
+                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white rounded-2xl border border-slate-200 p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <div
+            className="rounded-2xl p-8"
+            style={{
+              background: "var(--color-surface-2)",
+              border: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <h2
+              className="font-display mb-7 text-xl"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontWeight: 700,
+                color: "var(--color-cream)",
+                fontVariationSettings: '"opsz" 24',
+              }}
+            >
               This Is Not a Fit If…
             </h2>
             <ul className="space-y-4">
@@ -416,10 +621,8 @@ export default function Home() {
                 "You are looking for a magic button instead of a practical workflow improvement.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="text-slate-400 font-bold flex-shrink-0 mt-0.5">
-                    ✕
-                  </span>
-                  <span className="text-slate-600 text-sm">{item}</span>
+                  <span className="text-xs font-bold flex-shrink-0 mt-1" style={{ color: "rgba(122,106,86,0.5)" }}>✕</span>
+                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)", opacity: 0.7 }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -427,18 +630,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11. Audit Offer */}
-      <section className="py-20 px-6 bg-white">
+      {/* ── 11. Audit Offer ── */}
+      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <h2
+            className="font-display mb-4"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Book Your Free AI Workflow Audit
           </h2>
-          <p className="text-lg text-slate-600 mb-10">
+          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-cream-2)" }}>
             We&apos;ll help you identify where your business is losing time to
             repetitive work and show you what can be automated first.
           </p>
-          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-8 text-left">
-            <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-5">
+          <div
+            className="rounded-2xl p-8 mb-8 text-left"
+            style={{
+              background: "var(--color-surface)",
+              border: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <p
+              className="text-xs font-semibold tracking-[0.15em] uppercase mb-6"
+              style={{ color: "var(--color-amber)", opacity: 0.7 }}
+            >
               You&apos;ll walk away with:
             </p>
             <ul className="space-y-3">
@@ -452,95 +673,132 @@ export default function Home() {
                 "A fixed-price quote if you'd like us to build it",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="text-indigo-500 flex-shrink-0 mt-0.5">
-                    →
-                  </span>
-                  <span className="text-slate-700 text-sm">{item}</span>
+                  <span className="flex-shrink-0 mt-0.5" style={{ color: "var(--color-amber)" }}>→</span>
+                  <span className="text-sm" style={{ color: "var(--color-cream-2)" }}>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="text-xs mb-8" style={{ color: "rgba(122,106,86,0.7)" }}>
             The audit is free. There is no obligation. If we identify a good
             opportunity, you&apos;ll know exactly what the build would include
             and what it would cost before making a decision.
           </p>
-          <a
-            href="#audit"
-            className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-base px-10 py-4 rounded-xl transition-colors duration-150"
-          >
+          <a href="#audit" className="btn-primary inline-block text-sm px-9 py-4 rounded-xl font-semibold">
             Find Out What You Can Automate
           </a>
         </div>
       </section>
 
-      {/* 12. FAQ */}
-      <section className="py-20 px-6 bg-slate-50">
+      {/* ── 12. FAQ ── */}
+      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-12">
+          <h2
+            className="font-display text-center mb-12"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+            }}
+          >
             Common Questions
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map(({ q, a }) => (
               <div
                 key={q}
-                className="bg-white rounded-2xl border border-slate-200 p-7"
+                className="rounded-2xl p-7"
+                style={{
+                  background: "var(--color-surface-2)",
+                  border: "1px solid rgba(255,255,255,0.05)",
+                }}
               >
-                <h3 className="font-bold text-slate-900 mb-3 text-base">{q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{a}</p>
+                <h3 className="font-semibold text-sm mb-3" style={{ color: "var(--color-cream)" }}>
+                  {q}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
+                  {a}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 13. Final CTA */}
-      <section className="py-20 px-6 bg-white">
+      {/* ── 13. Final CTA ── */}
+      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <h2
+            className="font-display mb-5"
+            style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(2rem, 4vw, 3.25rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontVariationSettings: '"opsz" 72',
+              lineHeight: 1.1,
+            }}
+          >
             Before You Hire Another Admin, Find Out What Can Be Automated
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-base leading-relaxed mb-9" style={{ color: "var(--color-cream-2)" }}>
             If your team is buried in repetitive follow-up, reporting, data
             entry, reminders, or manual handoffs, we&apos;ll help you find the
             best place to start.
           </p>
-          <a
-            href="#audit"
-            className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-base px-10 py-4 rounded-xl transition-colors duration-150 mb-3"
-          >
+          <a href="#audit" className="btn-primary inline-block text-sm px-10 py-4 rounded-xl font-semibold mb-3">
             Book Your Free AI Workflow Audit
           </a>
-          <p className="text-sm text-slate-400 mt-3">
+          <p className="text-xs" style={{ color: "rgba(122,106,86,0.6)" }}>
             Free, no obligation, and built around the tools you already use.
           </p>
         </div>
       </section>
 
-      {/* 14. Form */}
-      <section id="audit" className="py-20 px-6 bg-slate-50">
+      {/* ── 14. Form ── LIGHT SECTION ── */}
+      <section id="audit" style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            <h2
+              className="font-display mb-4"
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                fontWeight: 700,
+                color: "var(--color-ink)",
+                fontVariationSettings: '"opsz" 72',
+              }}
+            >
               Book Your Free AI Workflow Audit
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-base" style={{ color: "var(--color-ink-2)" }}>
               Answer a few quick questions so we can understand where your
               business may be losing time.
             </p>
           </div>
-          <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-10">
+          <div
+            className="rounded-2xl p-8 sm:p-10"
+            style={{
+              background: "#fff",
+              border: "1px solid rgba(30,20,8,0.1)",
+              boxShadow: "0 4px 32px rgba(30,20,8,0.06)",
+            }}
+          >
             <AuditForm />
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-100 py-8 px-6">
+      {/* ── Footer ── */}
+      <footer
+        style={{ background: "var(--color-canvas)", borderTop: "1px solid rgba(255,255,255,0.05)" }}
+        className="py-8 px-6"
+      >
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm text-slate-400">
-            &copy; {new Date().getFullYear()} AI Workflow Audit. All rights
-            reserved.
+          <p className="text-xs" style={{ color: "rgba(122,106,86,0.5)" }}>
+            &copy; {new Date().getFullYear()} AI Workflow Audit. All rights reserved.
           </p>
         </div>
       </footer>

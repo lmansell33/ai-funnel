@@ -14,29 +14,88 @@ export default function AuditForm() {
     repetitiveWork: "",
   });
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // Wire this to your form backend (Formspree, Make webhook, etc.)
+    // Wire to your form backend (Formspree, Make webhook, etc.)
     await new Promise((r) => setTimeout(r, 600));
     router.push("/thank-you");
   }
 
-  const radioClass =
-    "flex items-center gap-2 cursor-pointer text-slate-700 text-sm";
-  const inputClass =
-    "w-full border border-slate-200 rounded-lg px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm";
+  const inputStyle = {
+    width: "100%",
+    border: "1px solid rgba(30,20,8,0.15)",
+    borderRadius: "10px",
+    padding: "12px 16px",
+    fontSize: "14px",
+    color: "var(--color-ink)",
+    background: "#fff",
+    outline: "none",
+    transition: "border-color 0.15s",
+    fontFamily: "inherit",
+  } as React.CSSProperties;
+
+  const labelStyle = {
+    display: "block",
+    fontSize: "13px",
+    fontWeight: 600,
+    color: "var(--color-ink)",
+    marginBottom: "10px",
+  } as React.CSSProperties;
+
+  function PillOption({
+    name,
+    value,
+    checked,
+    onChange,
+    label,
+  }: {
+    name: string;
+    value: string;
+    checked: boolean;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    label: string;
+  }) {
+    return (
+      <label
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "9px 18px",
+          borderRadius: "100px",
+          border: `1px solid ${checked ? "var(--color-amber)" : "rgba(30,20,8,0.15)"}`,
+          background: checked ? "var(--color-amber)" : "transparent",
+          color: checked ? "var(--color-ink)" : "var(--color-ink-2)",
+          fontSize: "13px",
+          fontWeight: 500,
+          cursor: "pointer",
+          transition: "all 0.15s",
+          userSelect: "none",
+        }}
+      >
+        <input
+          type="radio"
+          name={name}
+          value={value}
+          checked={checked}
+          onChange={onChange}
+          required
+          className="sr-only"
+        />
+        {label}
+      </label>
+    );
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
       <div>
-        <label className="block text-sm font-semibold text-slate-900 mb-2">
+        <label style={labelStyle}>
           What type of business do you run?
         </label>
         <input
@@ -45,80 +104,66 @@ export default function AuditForm() {
           onChange={handleChange}
           required
           placeholder="e.g. Law firm, home services, accounting practice…"
-          className={inputClass}
+          style={inputStyle}
+          onFocus={(e) => (e.target.style.borderColor = "var(--color-amber)")}
+          onBlur={(e) => (e.target.style.borderColor = "rgba(30,20,8,0.15)")}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-slate-900 mb-3">
-          How many people are on your team?
-        </label>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <label style={labelStyle}>How many people are on your team?</label>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {["Just me", "2–5", "6–15", "16+"].map((opt) => (
-            <label key={opt} className={radioClass}>
-              <input
-                type="radio"
-                name="teamSize"
-                value={opt}
-                checked={form.teamSize === opt}
-                onChange={handleChange}
-                required
-                className="accent-indigo-600"
-              />
-              {opt}
-            </label>
+            <PillOption
+              key={opt}
+              name="teamSize"
+              value={opt}
+              label={opt}
+              checked={form.teamSize === opt}
+              onChange={handleChange}
+            />
           ))}
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-slate-900 mb-3">
+        <label style={labelStyle}>
           Roughly how many hours per week do you think are lost to manual work?
         </label>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {["Under 5", "5–15", "15–30", "Not sure"].map((opt) => (
-            <label key={opt} className={radioClass}>
-              <input
-                type="radio"
-                name="hoursLost"
-                value={opt}
-                checked={form.hoursLost === opt}
-                onChange={handleChange}
-                required
-                className="accent-indigo-600"
-              />
-              {opt}
-            </label>
+            <PillOption
+              key={opt}
+              name="hoursLost"
+              value={opt}
+              label={opt}
+              checked={form.hoursLost === opt}
+              onChange={handleChange}
+            />
           ))}
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-slate-900 mb-3">
-          When are you looking to make a change?
-        </label>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <label style={labelStyle}>When are you looking to make a change?</label>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {["Next 30 days", "Next 90 days", "Just exploring"].map((opt) => (
-            <label key={opt} className={radioClass}>
-              <input
-                type="radio"
-                name="timeline"
-                value={opt}
-                checked={form.timeline === opt}
-                onChange={handleChange}
-                required
-                className="accent-indigo-600"
-              />
-              {opt}
-            </label>
+            <PillOption
+              key={opt}
+              name="timeline"
+              value={opt}
+              label={opt}
+              checked={form.timeline === opt}
+              onChange={handleChange}
+            />
           ))}
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-slate-900 mb-2">
+        <label style={{ ...labelStyle, fontWeight: 500 }}>
           What feels most repetitive right now?{" "}
-          <span className="font-normal text-slate-500">(optional)</span>
+          <span style={{ color: "var(--color-ink-2)", fontWeight: 400 }}>(optional)</span>
         </label>
         <textarea
           name="repetitiveWork"
@@ -126,19 +171,30 @@ export default function AuditForm() {
           onChange={handleChange}
           rows={3}
           placeholder="e.g. Following up on leads, copying data between systems, building weekly reports…"
-          className={inputClass}
+          style={{ ...inputStyle, resize: "vertical" }}
+          onFocus={(e) => (e.target.style.borderColor = "var(--color-amber)")}
+          onBlur={(e) => (e.target.style.borderColor = "rgba(30,20,8,0.15)")}
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 text-white font-semibold text-base py-4 px-8 rounded-xl transition-colors duration-150"
+        className="btn-primary"
+        style={{
+          width: "100%",
+          padding: "16px 32px",
+          borderRadius: "12px",
+          fontSize: "15px",
+          border: "none",
+          cursor: loading ? "not-allowed" : "pointer",
+          opacity: loading ? 0.7 : 1,
+        }}
       >
         {loading ? "Submitting…" : "Book My Free Audit"}
       </button>
 
-      <p className="text-center text-sm text-slate-500">
+      <p style={{ textAlign: "center", fontSize: "12px", color: "var(--color-ink-2)" }}>
         Free. No obligation. Built around the tools you already use.
       </p>
     </form>
