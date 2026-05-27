@@ -178,7 +178,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto flex flex-col gap-12">
 
           {/* Eyebrow */}
-          <div>
+          <div className="text-center">
             <span
               className="inline-block font-bold px-6 py-3 rounded-full"
               style={{
