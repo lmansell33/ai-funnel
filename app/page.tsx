@@ -194,9 +194,13 @@ export default function Home() {
           <h1
             className="font-bold tracking-tight"
             style={{
-              fontSize: "clamp(2rem, 3.8vw, 2.75rem)",
+              fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
               color: "var(--color-text)",
               lineHeight: 1.12,
+              paddingLeft: "0",
+              paddingRight: "0",
+              marginLeft: "-20px",
+              marginRight: "-20px",
             }}
           >
             Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
