@@ -174,72 +174,63 @@ export default function Home() {
       </nav>
 
       {/* ── 1. Hero ── */}
-      <section className="py-20 lg:py-28 px-6" style={{ background: "#fff" }}>
-        <div className="max-w-4xl mx-auto flex flex-col gap-12">
+      <section className="px-6 text-center" style={{ background: "#fff", paddingTop: "48px", paddingBottom: "40px" }}>
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-5">
 
           {/* Eyebrow */}
-          <div className="text-center">
-            <span
-              className="inline-block font-bold px-6 py-3 rounded-full"
-              style={{
-                fontSize: "1.35rem",
-                background: "var(--color-sage)",
-                color: "var(--color-forest-dark)",
-                border: "2px solid var(--color-sage-2)",
-              }}
-            >
-              Professional Services Businesses
-            </span>
-          </div>
+          <span
+            className="inline-block font-bold px-6 py-3 rounded-full"
+            style={{
+              fontSize: "1.35rem",
+              background: "var(--color-sage)",
+              color: "var(--color-forest-dark)",
+              border: "2px solid var(--color-sage-2)",
+            }}
+          >
+            Professional Services Businesses
+          </span>
 
           {/* Headline */}
           <h1
-            className="font-bold leading-tight tracking-tight"
+            className="font-bold tracking-tight"
             style={{
-              fontSize: "clamp(2.1rem, 4.5vw, 3.25rem)",
+              fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
               color: "var(--color-text)",
               lineHeight: 1.12,
-              marginTop: "-16px",
             }}
           >
             Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
           </h1>
 
-          {/* Subheadline + CTAs */}
-          <div style={{ marginTop: "-16px" }}>
-            <p
-              className="text-lg leading-relaxed mb-4"
-              style={{ color: "var(--color-text-2)" }}
-            >
-              Our Content Engine turns one focused shoot into videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets — planned, filmed, repurposed, and posted for you.
-            </p>
-            <p
-              className="text-base font-semibold mb-9"
-              style={{ color: "var(--color-forest)" }}
-            >
-              One shoot. Months of content. Done for you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-              <a href="/book-call" className="btn-primary">
-                Schedule Your Free Content Strategy Session
-              </a>
-            </div>
-            <div
-              className="flex items-center gap-2 mt-4 text-sm font-medium"
-              style={{ color: "var(--color-text-2)" }}
-            >
-              <IconPhone />
-              <span>Or Call: (954) 699-4950</span>
-            </div>
-          </div>
+          {/* Subheadline */}
+          <p
+            className="text-lg leading-relaxed"
+            style={{ color: "var(--color-text-2)", maxWidth: "680px" }}
+          >
+            Our Content Engine turns one focused shoot into videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets — planned, filmed, repurposed, and posted for you.
+          </p>
 
-          {/* Hero image — below subheadline */}
-          <div className="flex items-center justify-center">
+          {/* Hero image */}
+          <div className="w-full flex items-center justify-center">
             <img
               src="/hero-phones.png"
               alt="Content Engine — example short-form videos across platforms"
-              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
+              style={{ width: "100%", maxWidth: "680px", height: "auto", display: "block" }}
             />
+          </div>
+
+          {/* CTA */}
+          <a href="/book-call" className="btn-primary">
+            Schedule Your Free Content Strategy Session
+          </a>
+
+          {/* Phone */}
+          <div
+            className="flex items-center justify-center gap-2 text-sm font-medium"
+            style={{ color: "var(--color-text-2)" }}
+          >
+            <IconPhone />
+            <span>Or Call: (954) 699-4950</span>
           </div>
 
         </div>
