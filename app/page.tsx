@@ -1,353 +1,359 @@
-import AuditForm from "./components/AuditForm";
+import FAQ from "./components/FAQ";
 
-const automateCategories = [
+/* ─── SVG Icons ──────────────────────────────────────────────────── */
+
+function IconClipboard() {
+  return (
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+    </svg>
+  );
+}
+function IconCamera() {
+  return (
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+    </svg>
+  );
+}
+function IconRefresh() {
+  return (
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+    </svg>
+  );
+}
+function IconSend() {
+  return (
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+    </svg>
+  );
+}
+function IconCheck() {
+  return (
+    <svg width="14" height="14" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.2} style={{ color: "var(--color-forest)", flexShrink: 0, marginTop: 2 }}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.5l3 3 7-7" />
+    </svg>
+  );
+}
+function IconPhone() {
+  return (
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} style={{ flexShrink: 0 }}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  );
+}
+
+/* ─── Data ───────────────────────────────────────────────────────── */
+
+const howSteps = [
   {
-    title: "Follow-Up & Leads",
-    items: [
-      "Lead follow-up",
-      "Missed-call text back",
-      "Lead routing & notifications",
-      "Proposal follow-up",
-      "Appointment reminders",
-      "Review requests",
-    ],
+    num: "1",
+    icon: <IconClipboard />,
+    title: "Plan",
+    body: "We map out your content topics, talking points, questions, and scripts so you know exactly what to say before the camera turns on.",
   },
   {
-    title: "Admin & Data",
-    items: [
-      "Data entry between systems",
-      "Form-to-CRM workflows",
-      "CRM updates",
-      "Document collection",
-      "Spreadsheet cleanup",
-      "File organization",
-    ],
+    num: "2",
+    icon: <IconCamera />,
+    title: "Shoot",
+    body: "Our production team films a focused content session designed to capture your expertise in a natural, professional way.",
   },
   {
-    title: "Customer Experience",
-    items: [
-      "Client intake & onboarding",
-      "Appointment confirmations",
-      "Status updates",
-      "Payment reminders",
-      "Customer follow-up emails",
-      "Internal handoffs",
-    ],
+    num: "3",
+    icon: <IconRefresh />,
+    title: "Repurpose",
+    body: "We turn the footage into a full library of content for your website, email, social media, YouTube, and other marketing channels.",
   },
   {
-    title: "Reporting & Visibility",
-    items: [
-      "Weekly reports",
-      "Sales pipeline reports",
-      "Owner dashboards",
-      "Call summaries",
-      "Project status updates",
-      "KPI tracking",
-    ],
+    num: "4",
+    icon: <IconSend />,
+    title: "Post",
+    body: "We organize, schedule, and post the content so your business stays consistent without you having to manage every detail.",
   },
 ];
 
-const faqs = [
+const outputItems = [
+  "Instagram Reels",
+  "TikToks",
+  "YouTube Shorts",
+  "Facebook Posts",
+  "LinkedIn Posts",
+  "X/Twitter Posts",
+  "Captions",
+  "Email Articles",
+  "Blog Posts",
+  "Hashtags",
+];
+
+const businessTypes = [
+  "Law firms",
+  "Medical practices",
+  "Wealth advisors",
+  "Consultants",
+  "Agencies",
+  "Nonprofits",
+  "Gyms and performance facilities",
+  "Real estate professionals",
+  "Insurance professionals",
+  "High-ticket local service businesses",
+];
+
+const plans = [
   {
-    q: "My business is small. Is this worth it?",
-    a: "Yes. The smaller the team, the more each person's time matters. Many small businesses have more to automate than they realize because so much work is still handled through memory, spreadsheets, email, and manual follow-up.",
+    name: "Starter Content Engine",
+    price: "Starting at $1,500/mo",
+    description:
+      "For businesses that want consistent content without managing the process themselves.",
+    features: [
+      "Monthly content planning",
+      "Topic outlines and talking points",
+      "One focused content shoot or remote recording session",
+      "6–8 short-form videos",
+      "Captions and titles",
+      "Basic hashtag sets",
+      "Basic content calendar",
+      "Organized delivery folder",
+    ],
+    cta: "Start Creating Content",
+    featured: false,
   },
   {
-    q: "Do I have to switch tools?",
-    a: "No. In most cases, we build around the tools you already use — your CRM, email, spreadsheets, forms, calendar, accounting software, project management tools, or other systems already in place.",
+    name: "Professional Content Engine",
+    price: "Starting at $2,500/mo",
+    description:
+      "Best for businesses that want a complete monthly content system.",
+    badge: "Most Popular",
+    features: [
+      "Monthly content strategy",
+      "Topic planning and scripting",
+      "One professional content shoot",
+      "10–12 short-form videos",
+      "1–2 longer educational videos",
+      "Platform-specific captions",
+      "LinkedIn and Facebook post versions",
+      "Email article repurposing",
+      "Blog post repurposing",
+      "YouTube titles and descriptions",
+      "Hashtag sets",
+      "Organized content library",
+      "Posting and scheduling support",
+    ],
+    cta: "Build My Content Engine",
+    featured: true,
   },
   {
-    q: "Is this just AI chatbots?",
-    a: "No. Chatbots are only one small piece of automation. Most of the value is in connecting your tools, reducing manual data entry, automating follow-up, creating reminders, routing tasks, generating reports, and helping work move through the business without someone manually pushing every step.",
-  },
-  {
-    q: "How long does the audit take?",
-    a: "The audit starts with one working session. After that, you get a clear recommendation for what should be automated first and what a build would cost.",
-  },
-  {
-    q: "How much does the build cost?",
-    a: "Every build is quoted after the audit because the scope depends on the workflow. Simple automations may be smaller projects, while more complex workflows involving multiple tools, data sources, or approvals may require a larger build.",
-  },
-  {
-    q: "Will my team actually use it?",
-    a: "Good automation should remove steps, not add more. We focus on workflows your team already does and look for ways to make those steps faster, cleaner, and less manual.",
-  },
-  {
-    q: "Can AI make mistakes?",
-    a: "Yes, which is why important workflows should be designed with the right checks, approvals, and human review where needed. We do not recommend blindly automating sensitive or high-risk decisions.",
+    name: "Growth Content Engine",
+    price: "Starting at $4,000/mo",
+    description:
+      "For businesses that want content connected to their broader marketing system.",
+    features: [
+      "Everything in Professional Content Engine",
+      "Additional content volume",
+      "Ad creative variations",
+      "Landing page or VSL content support",
+      "Email nurture content",
+      "Sales follow-up content",
+      "GHL/CRM content support",
+      "Monthly content performance review",
+      "Posting and scheduling support",
+    ],
+    cta: "Connect Content to Growth",
+    featured: false,
+    note: "This package helps your content support ads, follow-up, landing pages, and sales conversations.",
   },
 ];
+
+/* ─── Page ───────────────────────────────────────────────────────── */
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+    <div style={{ fontFamily: "var(--font-sans), 'DM Sans', system-ui, sans-serif" }}>
 
       {/* ── Nav ── */}
       <nav
-        style={{ background: "rgba(12,10,8,0.92)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
         className="sticky top-0 z-50"
+        style={{
+          background: "rgba(255,255,255,0.95)",
+          backdropFilter: "blur(8px)",
+          borderBottom: "1px solid var(--color-border-2)",
+        }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span
-            className="font-display text-base font-semibold tracking-tight"
-            style={{ color: "var(--color-cream)", fontFamily: "var(--font-display), Georgia, serif" }}
-          >
-            AI Workflow Audit
-          </span>
-          <a
-            href="#audit"
-            className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg"
-          >
-            Book Free Audit
+          <a href="/" className="flex items-center gap-2 text-decoration-none">
+            <span
+              className="font-bold text-base tracking-tight"
+              style={{ color: "var(--color-forest)" }}
+            >
+              Mansell Productions
+            </span>
           </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+19546994950"
+              className="hidden sm:flex items-center gap-2 text-sm font-medium"
+              style={{ color: "var(--color-text-2)" }}
+            >
+              <IconPhone />
+              (954) 699-4950
+            </a>
+            <a href="/book-call" className="btn-primary" style={{ padding: "10px 20px", fontSize: "14px" }}>
+              Book Free Strategy Call
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* ── 1. Hero ── */}
-      <section style={{ background: "var(--color-canvas)" }} className="relative overflow-hidden">
-        {/* Decorative radial glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 70% 50% at 60% 50%, rgba(200,151,58,0.06) 0%, transparent 70%)",
-          }}
-        />
-        <div className="max-w-6xl mx-auto px-6 py-28 lg:py-36 grid lg:grid-cols-[1fr_auto] gap-16 items-center relative">
+      <section className="py-20 lg:py-28 px-6" style={{ background: "#fff" }}>
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Left: copy */}
           <div>
-            <p
-              className="hero-1 text-xs font-semibold tracking-[0.18em] uppercase mb-7"
-              style={{ color: "var(--color-amber)" }}
-            >
-              For small businesses drowning in admin work
-            </p>
+            <p className="section-label mb-5">Professional Services Businesses</p>
             <h1
-              className="hero-2 font-display leading-[1.04] tracking-tight mb-7"
+              className="font-bold leading-tight tracking-tight mb-6"
               style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: "clamp(2.6rem, 5vw, 4.5rem)",
-                fontWeight: 700,
-                color: "var(--color-cream)",
-                fontVariationSettings: '"opsz" 144',
+                fontSize: "clamp(2.1rem, 4.5vw, 3.25rem)",
+                color: "var(--color-text)",
+                lineHeight: 1.12,
               }}
             >
-              Before You Hire Another Admin, See What AI Can Already Handle
+              Turn One Content Shoot Into Months of Authority-Building Content
             </h1>
             <p
-              className="hero-3 text-lg leading-relaxed mb-3 max-w-2xl"
-              style={{ color: "var(--color-cream-2)" }}
+              className="text-lg leading-relaxed mb-4"
+              style={{ color: "var(--color-text-2)" }}
             >
-              We review how your business runs, identify the repetitive work
-              costing your team hours every week, and show you what can be
-              automated using the tools you already have.
+              Our Content Engine turns one focused shoot into videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets — planned, filmed, repurposed, and posted for you.
             </p>
             <p
-              className="hero-4 text-sm mb-10"
-              style={{ color: "rgba(122,106,86,0.9)" }}
+              className="text-base font-semibold mb-9"
+              style={{ color: "var(--color-forest)" }}
             >
-              Follow-up · Reporting · CRM updates · Data entry · Reminders · Document collection · Internal handoffs
+              One shoot. Months of content. Done for you.
             </p>
-            <div className="hero-5 flex flex-col sm:flex-row gap-4 items-start">
-              <a href="#audit" className="btn-primary text-sm px-7 py-3.5 rounded-xl">
-                Find Out What You Can Automate
-              </a>
-              <a href="#automate" className="btn-secondary text-sm px-7 py-3.5 rounded-xl font-semibold">
-                See What We Automate
+            <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+              <a href="/book-call" className="btn-primary">
+                Schedule Your Free Content Strategy Session
               </a>
             </div>
-            <p className="hero-5 text-xs mt-4" style={{ color: "rgba(122,106,86,0.7)" }}>
-              Free audit · No obligation · Clear roadmap and fixed-price quote if there&apos;s a fit
-            </p>
+            <div
+              className="flex items-center gap-2 mt-4 text-sm font-medium"
+              style={{ color: "var(--color-text-2)" }}
+            >
+              <IconPhone />
+              <span>Or Call: (954) 699-4950</span>
+            </div>
           </div>
 
-          {/* Decorative stat — desktop only */}
-          <div className="hidden lg:block text-right select-none">
-            <p
-              className="font-display leading-none font-bold"
+          {/* Right: flow diagram */}
+          <div>
+            <div
+              className="rounded-2xl p-7"
               style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: "10rem",
-                color: "var(--color-amber)",
-                opacity: 0.12,
-                fontVariationSettings: '"opsz" 144',
+                background: "var(--color-cream)",
+                border: "1px solid var(--color-border)",
               }}
             >
-              500
-            </p>
-            <p className="text-xs tracking-[0.2em] uppercase font-semibold -mt-6" style={{ color: "var(--color-amber)", opacity: 0.5 }}>
-              hours / year
-            </p>
-            <p className="text-xs mt-2" style={{ color: "rgba(122,106,86,0.5)" }}>
-              of work a system could handle
-            </p>
+              {/* Flow steps */}
+              <div className="grid grid-cols-4 gap-2 mb-7">
+                {[
+                  { label: "Plan", icon: <IconClipboard /> },
+                  { label: "Shoot", icon: <IconCamera /> },
+                  { label: "Repurpose", icon: <IconRefresh /> },
+                  { label: "Post", icon: <IconSend /> },
+                ].map((step, i, arr) => (
+                  <div key={step.label} className="flex items-center gap-1">
+                    <div className="flex flex-col items-center flex-1">
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-2"
+                        style={{
+                          background: "var(--color-sage)",
+                          color: "var(--color-forest)",
+                        }}
+                      >
+                        {step.icon}
+                      </div>
+                      <span
+                        className="text-xs font-semibold text-center"
+                        style={{ color: "var(--color-text)" }}
+                      >
+                        {step.label}
+                      </span>
+                    </div>
+                    {i < arr.length - 1 && (
+                      <span
+                        className="text-base mb-4 flex-shrink-0"
+                        style={{ color: "var(--color-forest-mid)", opacity: 0.5 }}
+                      >
+                        →
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div style={{ borderTop: "1px solid var(--color-border)", marginBottom: "20px" }} />
+
+              {/* Output labels */}
+              <p className="text-xs font-semibold mb-3" style={{ color: "var(--color-text-3)", letterSpacing: "0.08em" }}>
+                ONE SHOOT BECOMES:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Reels", "Blogs", "Emails", "Captions", "Social Posts", "Hashtags"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-medium px-3 py-1.5 rounded-full"
+                    style={{
+                      background: "var(--color-sage)",
+                      color: "var(--color-forest-dark)",
+                      border: "1px solid var(--color-sage-2)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* ── 2. Business Type ── */}
-      <section style={{ background: "var(--color-surface)" }} className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2
-            className="font-display mb-5"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Built for Service-Based Small Businesses
-          </h2>
-          <p className="text-base leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
-            This is for businesses where admin work, follow-up, reporting, scheduling, and
-            internal handoffs are starting to slow the team down.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {[
-              "Law firms", "Accounting firms", "Home service companies",
-              "Agencies", "Medical offices", "Real estate teams",
-              "Property managers", "Consultants",
-            ].map((type) => (
-              <span
-                key={type}
-                className="text-sm font-medium px-4 py-2 rounded-full"
-                style={{
-                  background: "var(--color-ghost)",
-                  color: "var(--color-cream-2)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                }}
-              >
-                {type}
-              </span>
-            ))}
-            <span
-              className="text-sm italic px-4 py-2 rounded-full"
-              style={{ color: "rgba(122,106,86,0.6)" }}
-            >
-              and other service businesses with repeatable workflows
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. Problem ── LIGHT SECTION ── */}
-      <section style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
+      {/* ── 2. How the Content Engine Works ── */}
+      <section className="py-20 px-6" style={{ background: "var(--color-cream)" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
             <h2
-              className="font-display mb-5"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--color-ink)",
-                fontVariationSettings: '"opsz" 72',
-              }}
+              className="font-bold"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)" }}
             >
-              Manual Work Costs More Than Time
+              How the Content Engine Works
             </h2>
-            <p className="text-base leading-relaxed mb-5 max-w-2xl mx-auto" style={{ color: "var(--color-ink-2)" }}>
-              Repetitive work does not just eat hours. It creates missed
-              opportunities, mistakes, delays, and pressure to hire before your
-              systems are ready.
-            </p>
-            <p
-              className="text-base font-medium max-w-2xl mx-auto leading-relaxed"
-              style={{ color: "var(--color-ink)" }}
-            >
-              If one person on your team spends just 10 hours a week on
-              repetitive admin, that&apos;s more than{" "}
-              <span
-                className="font-display font-bold"
-                style={{ fontFamily: "var(--font-display), Georgia, serif", color: "var(--color-amber)", fontVariationSettings: '"opsz" 24' }}
-              >
-                500 hours a year
-              </span>{" "}
-              spent on work a system could handle.
-            </p>
           </div>
-
-          <div
-            className="rounded-2xl p-8"
-            style={{ background: "var(--color-parchment-2)", border: "1px solid rgba(30,20,8,0.08)" }}
-          >
-            <p
-              className="text-xs font-semibold tracking-[0.15em] uppercase mb-6"
-              style={{ color: "var(--color-ink-2)" }}
-            >
-              Common signs your business has automation opportunities
-            </p>
-            <ul className="space-y-4">
-              {[
-                "Leads go cold because no one followed up fast enough.",
-                "Customers or clients get missed because a reminder lived in someone's head.",
-                "Reports come out wrong because data was copied by hand.",
-                "Your team keeps updating the same spreadsheets every week.",
-                "Information gets copied between email, forms, CRMs, spreadsheets, and project management tools.",
-                "Your best people spend too much time on work a system could do.",
-                "Every bit of growth feels like it requires hiring another person just to keep up.",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span style={{ color: "var(--color-amber)" }} className="flex-shrink-0 mt-0.5 font-bold">→</span>
-                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p className="text-center text-sm mt-8" style={{ color: "var(--color-ink-2)" }}>
-            Before you hire another admin, add another tool, or keep patching the problem manually —{" "}
-            <span className="font-semibold" style={{ color: "var(--color-ink)" }}>
-              we&apos;ll show you what can be automated first.
-            </span>
-          </p>
-        </div>
-      </section>
-
-      {/* ── 4. Solution ── */}
-      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2
-            className="font-display mb-6"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Less Manual Work. Fewer Things Slipping Through.
-          </h2>
-          <p className="text-base leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
-            We identify the repeatable workflows in your business and help
-            automate them using the tools you already have — your CRM, email,
-            spreadsheets, forms, calendars, project management software,
-            accounting tools, and AI.
-          </p>
-          <p className="text-base leading-relaxed mb-12 max-w-2xl mx-auto" style={{ color: "var(--color-cream-2)" }}>
-            You do not need to replace your entire tech stack. We build around
-            what you already use, then create workflows that reduce manual steps,
-            improve follow-up, and give you better visibility into what is
-            happening inside your business.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-            {[
-              "Less manual work",
-              "Fewer missed follow-ups",
-              "Cleaner handoffs",
-              "Better visibility",
-              "More capacity without adding payroll",
-            ].map((result) => (
-              <div
-                key={result}
-                className="rounded-xl p-4 text-center"
-                style={{
-                  background: "var(--color-amber-dim)",
-                  border: "1px solid rgba(200,151,58,0.15)",
-                }}
-              >
-                <p className="text-xs font-semibold leading-snug" style={{ color: "var(--color-amber-light)" }}>
-                  {result}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {howSteps.map((step) => (
+              <div key={step.num} className="card">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                  style={{ background: "var(--color-forest)", color: "#fff" }}
+                >
+                  <span className="text-sm font-bold">{step.num}</span>
+                </div>
+                <div style={{ color: "var(--color-forest)", marginBottom: "10px" }}>
+                  {step.icon}
+                </div>
+                <h3
+                  className="font-bold text-lg mb-3"
+                  style={{ color: "var(--color-text)" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-2)" }}>
+                  {step.body}
                 </p>
               </div>
             ))}
@@ -355,453 +361,279 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. How the Audit Works ── */}
-      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+      {/* ── 3. What One Shoot Can Become ── */}
+      <section className="py-20 px-6" style={{ background: "#fff" }}>
+        <div className="max-w-4xl mx-auto text-center">
           <h2
-            className="font-display text-center mb-14"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
+            className="font-bold mb-4"
+            style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)" }}
           >
-            Three Steps, No Guesswork
+            What One Shoot Can Become
           </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              {
-                step: "01",
-                title: "We map your workflows.",
-                body: "We walk through how your business actually operates day to day — where leads come from, how customers are followed up with, where information is stored, what gets repeated, and where things slow down.",
-              },
-              {
-                step: "02",
-                title: "We find and rank the opportunities.",
-                body: "You see which tasks are worth automating, what could save the most time, and what should be fixed first.",
-              },
-              {
-                step: "03",
-                title: "You get a clear next step.",
-                body: "We outline what's worth automating first, the tools involved, and — if you want us to build it — a fixed-price quote before you commit to anything.",
-              },
-            ].map(({ step, title, body }) => (
+          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-text-2)" }}>
+            One focused content shoot can be turned into platform-ready content for your main marketing channels.
+          </p>
+
+          {/* Output grid */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {outputItems.map((item) => (
               <div
-                key={step}
-                className="card-lift rounded-2xl p-8"
+                key={item}
+                className="flex items-center gap-2 px-4 py-3 rounded-xl"
                 style={{
-                  background: "var(--color-surface-2)",
-                  border: "1px solid rgba(255,255,255,0.05)",
+                  background: "var(--color-sage)",
+                  border: "1px solid var(--color-sage-2)",
                 }}
               >
-                <p
-                  className="font-display font-bold leading-none mb-5"
+                <span
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ background: "var(--color-forest)" }}
+                />
+                <span
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--color-text)" }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p
+            className="text-base font-semibold"
+            style={{ color: "var(--color-text-2)" }}
+          >
+            One shoot gives your business a full library of platform-ready content to use across your main marketing channels.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 4. Built for Businesses Where Trust Is the Sale ── */}
+      <section
+        className="py-20 px-6"
+        style={{ background: "var(--color-sage)", borderTop: "1px solid var(--color-sage-2)", borderBottom: "1px solid var(--color-sage-2)" }}
+      >
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-start">
+          <div>
+            <h2
+              className="font-bold mb-6"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)", lineHeight: 1.2 }}
+            >
+              Built for Businesses Where Trust Is the Sale
+            </h2>
+            <p className="text-base leading-relaxed mb-5" style={{ color: "var(--color-text-2)" }}>
+              Professional service businesses need clear, helpful, educational content that makes their expertise easier to understand.
+            </p>
+            <p className="text-base leading-relaxed mb-8" style={{ color: "var(--color-text-2)" }}>
+              We help you create content that answers real questions, explains your services, builds credibility, and positions your business as a trusted authority in your market.
+            </p>
+            <a href="/book-call" className="btn-primary">
+              Schedule Your Free Content Strategy Session
+            </a>
+          </div>
+          <div>
+            <p className="font-semibold text-sm mb-5" style={{ color: "var(--color-text-3)", letterSpacing: "0.05em" }}>
+              IDEAL FOR:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {businessTypes.map((type) => (
+                <div
+                  key={type}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl"
                   style={{
-                    fontFamily: "var(--font-display), Georgia, serif",
-                    fontSize: "3.5rem",
-                    color: "var(--color-amber)",
-                    opacity: 0.25,
-                    fontVariationSettings: '"opsz" 72',
+                    background: "#fff",
+                    border: "1px solid var(--color-border)",
                   }}
                 >
-                  {step}
-                </p>
-                <h3 className="font-semibold mb-3 text-base" style={{ color: "var(--color-cream)" }}>
-                  {title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
-                  {body}
-                </p>
-              </div>
-            ))}
+                  <span
+                    className="w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ background: "var(--color-forest)" }}
+                  />
+                  <span className="text-sm font-medium" style={{ color: "var(--color-text)" }}>
+                    {type}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 6. What We Can Automate ── */}
-      <section id="automate" style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
+      {/* ── 5. Choose Your Content Engine ── */}
+      <section className="py-20 px-6" style={{ background: "#fff" }}>
         <div className="max-w-6xl mx-auto">
-          <h2
-            className="font-display text-center mb-14"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Real Examples of Work We Take Off Your Plate
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {automateCategories.map(({ title, items }) => (
+          <div className="text-center mb-12">
+            <h2
+              className="font-bold"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)" }}
+            >
+              Choose Your Content Engine
+            </h2>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            {plans.map((plan) => (
               <div
-                key={title}
-                className="card-lift rounded-2xl p-6"
-                style={{
-                  background: "var(--color-surface)",
-                  border: "1px solid rgba(255,255,255,0.05)",
-                  borderTop: "2px solid var(--color-amber)",
-                }}
+                key={plan.name}
+                className={plan.featured ? "card-featured" : "card"}
+                style={{ height: "100%", display: "flex", flexDirection: "column" }}
               >
-                <h3 className="font-semibold text-sm mb-5" style={{ color: "var(--color-amber)" }}>
-                  {title}
+                {plan.badge && (
+                  <div className="mb-4">
+                    <span
+                      className="text-xs font-bold px-3 py-1 rounded-full"
+                      style={{
+                        background: "var(--color-forest)",
+                        color: "#fff",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {plan.badge}
+                    </span>
+                  </div>
+                )}
+                <h3
+                  className="font-bold text-xl mb-1"
+                  style={{ color: "var(--color-text)" }}
+                >
+                  {plan.name}
                 </h3>
-                <ul className="space-y-2.5">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
-                      <span style={{ color: "rgba(200,151,58,0.4)" }} className="flex-shrink-0 mt-0.5">·</span>
-                      {item}
+                <p
+                  className="font-bold text-2xl mb-4"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  {plan.price}
+                </p>
+                <p
+                  className="text-sm leading-relaxed mb-6"
+                  style={{
+                    color: "var(--color-text-2)",
+                    paddingBottom: "20px",
+                    borderBottom: "1px solid var(--color-border-2)",
+                  }}
+                >
+                  {plan.description}
+                </p>
+                <ul className="space-y-2.5 mb-8 flex-1">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5">
+                      <IconCheck />
+                      <span className="text-sm leading-relaxed" style={{ color: "var(--color-text-2)" }}>
+                        {f}
+                      </span>
                     </li>
                   ))}
                 </ul>
+                {plan.note && (
+                  <p
+                    className="text-xs leading-relaxed mb-5 italic"
+                    style={{ color: "var(--color-text-3)" }}
+                  >
+                    {plan.note}
+                  </p>
+                )}
+                <a
+                  href="/book-call"
+                  className={plan.featured ? "btn-primary" : "btn-outline"}
+                  style={{ textAlign: "center" }}
+                >
+                  {plan.cta}
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 7. After the Audit ── */}
+      {/* ── 6. FAQ ── */}
+      <section className="py-20 px-6" style={{ background: "var(--color-cream)" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2
+              className="font-bold"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)" }}
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <FAQ />
+        </div>
+      </section>
+
+      {/* ── 7. Final CTA ── */}
       <section
         className="py-24 px-6"
-        style={{
-          background: "var(--color-amber-dim)",
-          borderTop: "1px solid rgba(200,151,58,0.12)",
-          borderBottom: "1px solid rgba(200,151,58,0.12)",
-        }}
+        style={{ background: "var(--color-forest-deep)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2
-            className="font-display mb-6"
+            className="font-bold mb-5"
             style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
+              fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+              color: "#fff",
+              lineHeight: 1.15,
             }}
           >
-            When You&apos;re Ready to Build It, We Can
+            Stop Starting From Scratch Every Week
           </h2>
-          <p className="text-base leading-relaxed mb-5" style={{ color: "var(--color-cream-2)" }}>
-            The audit shows you what to automate and where to start. If you want
-            those workflows built, we can build them for you.
+          <p
+            className="text-base leading-relaxed mb-9 max-w-2xl mx-auto"
+            style={{ color: "rgba(255,255,255,0.72)" }}
+          >
+            We plan, shoot, repurpose, organize, and post professional content for your business — so one focused shoot can become months of videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets.
           </p>
-          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-cream-2)" }}>
-            Most builds fall into lead follow-up, customer onboarding, internal
-            task routing, reporting dashboards, CRM cleanup, or document
-            collection — but the scope is always shaped by your actual workflows.
-          </p>
-          <div
-            className="inline-flex items-center gap-3 rounded-xl px-7 py-4"
+          <a
+            href="/book-call"
             style={{
-              background: "rgba(200,151,58,0.1)",
-              border: "1px solid rgba(200,151,58,0.25)",
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ color: "var(--color-amber-light)" }}>
-              Every build is quoted at a fixed price before work begins.
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 8. Proof ── LIGHT SECTION ── */}
-      <section style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            className="font-display text-center mb-10"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-ink)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Real Workflow Problems. Practical Automation Solutions.
-          </h2>
-          <div
-            className="rounded-2xl p-10 relative"
-            style={{
-              background: "var(--color-parchment-2)",
-              border: "1px solid rgba(30,20,8,0.08)",
-              borderLeft: "3px solid var(--color-amber)",
-            }}
-          >
-            <p
-              className="font-display italic text-4xl leading-none mb-6 select-none"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                color: "var(--color-amber)",
-                opacity: 0.25,
-                fontVariationSettings: '"opsz" 72',
-              }}
-            >
-              &ldquo;
-            </p>
-            <p className="text-base leading-relaxed mb-5" style={{ color: "var(--color-ink)" }}>
-              We are currently helping a professional service firm reduce manual
-              bookkeeping and reconciliation steps by mapping their weekly and
-              monthly reporting process, identifying repetitive handoffs, and
-              building automation around the work their team was previously doing
-              by hand.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--color-ink-2)" }}>
-              The goal is simple: reduce repetitive admin, improve accuracy, and
-              give the team back time without forcing them to replace the tools
-              they already use.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9 & 10. Fit / Not Fit ── */}
-      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-6">
-          <div
-            className="rounded-2xl p-8"
-            style={{
-              background: "var(--color-surface-2)",
-              border: "1px solid rgba(255,255,255,0.05)",
-            }}
-          >
-            <h2
-              className="font-display mb-7 text-xl"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontWeight: 700,
-                color: "var(--color-cream)",
-                fontVariationSettings: '"opsz" 24',
-              }}
-            >
-              This Is a Good Fit If…
-            </h2>
-            <ul className="space-y-4">
-              {[
-                "You run a small business with repeatable manual workflows.",
-                "Your team spends hours on follow-up, data entry, reporting, scheduling, or admin tasks.",
-                "You are considering hiring another admin person just to keep up.",
-                "You use tools like a CRM, spreadsheets, forms, email, calendars, project management software, or accounting software.",
-                "You know things are falling through the cracks, but you are not sure what to automate first.",
-                "You want practical automation, not AI hype.",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-xs font-bold flex-shrink-0 mt-1" style={{ color: "var(--color-amber)" }}>✓</span>
-                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className="rounded-2xl p-8"
-            style={{
-              background: "var(--color-surface-2)",
-              border: "1px solid rgba(255,255,255,0.05)",
-            }}
-          >
-            <h2
-              className="font-display mb-7 text-xl"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontWeight: 700,
-                color: "var(--color-cream)",
-                fontVariationSettings: '"opsz" 24',
-              }}
-            >
-              This Is Not a Fit If…
-            </h2>
-            <ul className="space-y-4">
-              {[
-                "You want a random AI tool with no process behind it.",
-                "You are not open to changing how work flows inside the business.",
-                "You want automation to fully replace human review for important decisions.",
-                "You are looking for a magic button instead of a practical workflow improvement.",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-xs font-bold flex-shrink-0 mt-1" style={{ color: "rgba(122,106,86,0.5)" }}>✕</span>
-                  <span className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)", opacity: 0.7 }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 11. Audit Offer ── */}
-      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2
-            className="font-display mb-4"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Book Your Free AI Workflow Audit
-          </h2>
-          <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-cream-2)" }}>
-            We&apos;ll help you identify where your business is losing time to
-            repetitive work and show you what can be automated first.
-          </p>
-          <div
-            className="rounded-2xl p-8 mb-8 text-left"
-            style={{
-              background: "var(--color-surface)",
-              border: "1px solid rgba(255,255,255,0.05)",
-            }}
-          >
-            <p
-              className="text-xs font-semibold tracking-[0.15em] uppercase mb-6"
-              style={{ color: "var(--color-amber)", opacity: 0.7 }}
-            >
-              You&apos;ll walk away with:
-            </p>
-            <ul className="space-y-3">
-              {[
-                "A review of your current workflow bottlenecks",
-                "A prioritized list of automation opportunities",
-                "A practical recommendation for what to fix first",
-                "An estimate of where time could be saved",
-                "Recommended tools or system improvements",
-                "A clear next step if you want us to build it",
-                "A fixed-price quote if you'd like us to build it",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 mt-0.5" style={{ color: "var(--color-amber)" }}>→</span>
-                  <span className="text-sm" style={{ color: "var(--color-cream-2)" }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p className="text-xs mb-8" style={{ color: "rgba(122,106,86,0.7)" }}>
-            The audit is free. There is no obligation. If we identify a good
-            opportunity, you&apos;ll know exactly what the build would include
-            and what it would cost before making a decision.
-          </p>
-          <a href="#audit" className="btn-primary inline-block text-sm px-9 py-4 rounded-xl font-semibold">
-            Find Out What You Can Automate
-          </a>
-        </div>
-      </section>
-
-      {/* ── 12. FAQ ── */}
-      <section style={{ background: "var(--color-surface)" }} className="py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            className="font-display text-center mb-12"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-            }}
-          >
-            Common Questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map(({ q, a }) => (
-              <div
-                key={q}
-                className="rounded-2xl p-7"
-                style={{
-                  background: "var(--color-surface-2)",
-                  border: "1px solid rgba(255,255,255,0.05)",
-                }}
-              >
-                <h3 className="font-semibold text-sm mb-3" style={{ color: "var(--color-cream)" }}>
-                  {q}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--color-cream-2)" }}>
-                  {a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 13. Final CTA ── */}
-      <section style={{ background: "var(--color-canvas)" }} className="py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2
-            className="font-display mb-5"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3.25rem)",
-              fontWeight: 700,
-              color: "var(--color-cream)",
-              fontVariationSettings: '"opsz" 72',
-              lineHeight: 1.1,
-            }}
-          >
-            Before You Hire Another Admin, Find Out What Can Be Automated
-          </h2>
-          <p className="text-base leading-relaxed mb-9" style={{ color: "var(--color-cream-2)" }}>
-            If your team is buried in repetitive follow-up, reporting, data
-            entry, reminders, or manual handoffs, we&apos;ll help you find the
-            best place to start.
-          </p>
-          <a href="#audit" className="btn-primary inline-block text-sm px-10 py-4 rounded-xl font-semibold mb-3">
-            Book Your Free AI Workflow Audit
-          </a>
-          <p className="text-xs" style={{ color: "rgba(122,106,86,0.6)" }}>
-            Free, no obligation, and built around the tools you already use.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 14. Form ── LIGHT SECTION ── */}
-      <section id="audit" style={{ background: "var(--color-parchment)" }} className="py-24 px-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <h2
-              className="font-display mb-4"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--color-ink)",
-                fontVariationSettings: '"opsz" 72',
-              }}
-            >
-              Book Your Free AI Workflow Audit
-            </h2>
-            <p className="text-base" style={{ color: "var(--color-ink-2)" }}>
-              Answer a few quick questions so we can understand where your
-              business may be losing time.
-            </p>
-          </div>
-          <div
-            className="rounded-2xl p-8 sm:p-10"
-            style={{
+              display: "inline-block",
               background: "#fff",
-              border: "1px solid rgba(30,20,8,0.1)",
-              boxShadow: "0 4px 32px rgba(30,20,8,0.06)",
+              color: "var(--color-forest-deep)",
+              fontWeight: 700,
+              fontSize: "15px",
+              padding: "15px 32px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              transition: "opacity 0.15s",
+              marginBottom: "16px",
             }}
           >
-            <AuditForm />
+            Schedule Your Free Content Strategy Session
+          </a>
+          <div
+            className="flex items-center justify-center gap-2 text-sm"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
+            <IconPhone />
+            <span>Or Call: (954) 699-4950</span>
           </div>
         </div>
       </section>
 
       {/* ── Footer ── */}
       <footer
-        style={{ background: "var(--color-canvas)", borderTop: "1px solid rgba(255,255,255,0.05)" }}
         className="py-8 px-6"
+        style={{
+          background: "var(--color-forest-deep)",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+        }}
       >
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-xs" style={{ color: "rgba(122,106,86,0.5)" }}>
-            &copy; {new Date().getFullYear()} AI Workflow Audit. All rights reserved.
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>
+            Mansell Productions
+          </span>
+          <a
+            href="tel:+19546994950"
+            className="flex items-center gap-2 text-sm"
+            style={{ color: "rgba(255,255,255,0.5)" }}
+          >
+            <IconPhone />
+            (954) 699-4950
+          </a>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+            &copy; {new Date().getFullYear()} Mansell Productions. All rights reserved.
           </p>
         </div>
       </footer>
+
     </div>
   );
 }

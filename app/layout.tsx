@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-display",
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Free AI Workflow Audit — Find Out What Your Business Can Automate",
+  title: "Content Engine for Professional Services | Mansell Productions",
   description:
-    "We review how your business runs, identify the repetitive work costing your team hours every week, and show you what can be automated using the tools you already have.",
+    "Turn one content shoot into months of authority-building videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets for your professional service business.",
 };
 
 export default function RootLayout({
@@ -27,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${jakarta.variable} antialiased`}
-    >
+    <html lang="en" className={`${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );
