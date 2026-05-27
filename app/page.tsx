@@ -2,34 +2,6 @@ import FAQ from "./components/FAQ";
 
 /* ─── SVG Icons ──────────────────────────────────────────────────── */
 
-function IconClipboard() {
-  return (
-    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-    </svg>
-  );
-}
-function IconCamera() {
-  return (
-    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-    </svg>
-  );
-}
-function IconRefresh() {
-  return (
-    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-    </svg>
-  );
-}
-function IconSend() {
-  return (
-    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-    </svg>
-  );
-}
 function IconCheck() {
   return (
     <svg width="14" height="14" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.2} style={{ color: "var(--color-forest)", flexShrink: 0, marginTop: 2 }}>
@@ -50,25 +22,21 @@ function IconPhone() {
 const howSteps = [
   {
     num: "1",
-    icon: <IconClipboard />,
     title: "Plan",
     body: "We map out your content topics, talking points, questions, and scripts so you know exactly what to say before the camera turns on.",
   },
   {
     num: "2",
-    icon: <IconCamera />,
     title: "Shoot",
     body: "Our production team films a focused content session designed to capture your expertise in a natural, professional way.",
   },
   {
     num: "3",
-    icon: <IconRefresh />,
     title: "Repurpose",
     body: "We turn the footage into a full library of content for your website, email, social media, YouTube, and other marketing channels.",
   },
   {
     num: "4",
-    icon: <IconSend />,
     title: "Post",
     body: "We organize, schedule, and post the content so your business stays consistent without you having to manage every detail.",
   },
@@ -220,7 +188,7 @@ export default function Home() {
                 lineHeight: 1.12,
               }}
             >
-              Turn One Content Shoot Into Months of Authority-Building Content
+              Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
             </h1>
             <p
               className="text-lg leading-relaxed mb-4"
@@ -248,76 +216,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: flow diagram */}
-          <div>
-            <div
-              className="rounded-2xl p-7"
-              style={{
-                background: "var(--color-cream)",
-                border: "1px solid var(--color-border)",
-              }}
-            >
-              {/* Flow steps */}
-              <div className="grid grid-cols-4 gap-2 mb-7">
-                {[
-                  { label: "Plan", icon: <IconClipboard /> },
-                  { label: "Shoot", icon: <IconCamera /> },
-                  { label: "Repurpose", icon: <IconRefresh /> },
-                  { label: "Post", icon: <IconSend /> },
-                ].map((step, i, arr) => (
-                  <div key={step.label} className="flex items-center gap-1">
-                    <div className="flex flex-col items-center flex-1">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-2"
-                        style={{
-                          background: "var(--color-sage)",
-                          color: "var(--color-forest)",
-                        }}
-                      >
-                        {step.icon}
-                      </div>
-                      <span
-                        className="text-xs font-semibold text-center"
-                        style={{ color: "var(--color-text)" }}
-                      >
-                        {step.label}
-                      </span>
-                    </div>
-                    {i < arr.length - 1 && (
-                      <span
-                        className="text-base mb-4 flex-shrink-0"
-                        style={{ color: "var(--color-forest-mid)", opacity: 0.5 }}
-                      >
-                        →
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Divider */}
-              <div style={{ borderTop: "1px solid var(--color-border)", marginBottom: "20px" }} />
-
-              {/* Output labels */}
-              <p className="text-xs font-semibold mb-3" style={{ color: "var(--color-text-3)", letterSpacing: "0.08em" }}>
-                ONE SHOOT BECOMES:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Reels", "Blogs", "Emails", "Captions", "Social Posts", "Hashtags"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-medium px-3 py-1.5 rounded-full"
-                    style={{
-                      background: "var(--color-sage)",
-                      color: "var(--color-forest-dark)",
-                      border: "1px solid var(--color-sage-2)",
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {/* Right: hero image */}
+          <div className="flex items-center justify-center">
+            <img
+              src="/hero-phones.png"
+              alt="Content Engine — example short-form videos across platforms"
+              style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block" }}
+            />
           </div>
 
         </div>
@@ -338,13 +243,10 @@ export default function Home() {
             {howSteps.map((step) => (
               <div key={step.num} className="card">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                  className="w-10 h-10 rounded-full flex items-center justify-center mb-5"
                   style={{ background: "var(--color-forest)", color: "#fff" }}
                 >
                   <span className="text-sm font-bold">{step.num}</span>
-                </div>
-                <div style={{ color: "var(--color-forest)", marginBottom: "10px" }}>
-                  {step.icon}
                 </div>
                 <h3
                   className="font-bold text-lg mb-3"
