@@ -194,7 +194,7 @@ export default function Home() {
           <h1
             className="font-bold tracking-tight"
             style={{
-              fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
+              fontSize: "clamp(2rem, 3.8vw, 2.75rem)",
               color: "var(--color-text)",
               lineHeight: 1.12,
             }}
