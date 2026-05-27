@@ -179,7 +179,18 @@ export default function Home() {
 
           {/* Left: copy */}
           <div>
-            <p className="section-label mb-5">Professional Services Businesses</p>
+            <div className="mb-6">
+              <span
+                className="inline-block font-bold text-base px-5 py-2.5 rounded-lg"
+                style={{
+                  background: "var(--color-forest)",
+                  color: "#ffffff",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                Professional Services Businesses
+              </span>
+            </div>
             <h1
               className="font-bold leading-tight tracking-tight mb-6"
               style={{
