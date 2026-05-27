@@ -21,22 +21,38 @@ function IconPhone() {
 
 const howSteps = [
   {
-    num: "1",
+    icon: (
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
     title: "We Create the Ideas",
     body: "We help create topics that speak directly to your ideal customer and position your business as the premier choice to solve their problem.",
   },
   {
-    num: "2",
+    icon: (
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+      </svg>
+    ),
     title: "We Make You Look Good",
     body: "We specialize in making you look natural on camera while positioning you as the expert you already are.",
   },
   {
-    num: "3",
+    icon: (
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+    ),
     title: "We Multiply the Content",
     body: "One session becomes Reels, blogs, emails, social posts, carousel posts, and platform-ready assets.",
   },
   {
-    num: "4",
+    icon: (
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+      </svg>
+    ),
     title: "We Post It for You",
     body: "We organize, schedule, and publish the content so you stay visible without managing the entire process yourself.",
   },
@@ -254,18 +270,17 @@ export default function Home() {
                   boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
                 }}
               >
-                {/* Large step number */}
-                <div className="mb-4 flex items-center gap-3">
-                  <span
-                    className="font-bold leading-none"
-                    style={{
-                      fontSize: "3.5rem",
-                      color: "var(--color-sage)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {step.num.padStart(2, "0")}
-                  </span>
+                {/* Icon */}
+                <div
+                  className="mb-5 flex items-center justify-center rounded-2xl"
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    background: "var(--color-sage)",
+                    color: "var(--color-forest)",
+                  }}
+                >
+                  {step.icon}
                 </div>
                 <h3
                   className="font-bold text-lg mb-3"
