@@ -199,7 +199,7 @@ export default function Home() {
             className="hero-sub"
             style={{ color: "var(--color-text-2)" }}
           >
-            Upload your footage or let us shoot it for you. Our Content Engine turns one focused video session into Reels, Shorts, blogs, emails, captions, hashtags, and social posts — organized and ready to publish.
+            Upload your footage or let us shoot it for you. Our team turns one focused video session into Reels, Shorts, blogs, emails, captions, hashtags, and social posts — all organized in our Content Engine where we publish for you where needed.
           </p>
 
           {/* Hero image */}
