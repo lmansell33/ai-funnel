@@ -205,17 +205,8 @@ export default function Home() {
             Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
           </h1>
 
-          {/* Hero image — between headline and subheadline */}
-          <div className="flex items-center justify-center">
-            <img
-              src="/hero-phones.png"
-              alt="Content Engine — example short-form videos across platforms"
-              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
-            />
-          </div>
-
           {/* Subheadline + CTAs */}
-          <div>
+          <div style={{ marginTop: "-16px" }}>
             <p
               className="text-lg leading-relaxed mb-4"
               style={{ color: "var(--color-text-2)" }}
@@ -240,6 +231,15 @@ export default function Home() {
               <IconPhone />
               <span>Or Call: (954) 699-4950</span>
             </div>
+          </div>
+
+          {/* Hero image — below subheadline */}
+          <div className="flex items-center justify-center">
+            <img
+              src="/hero-phones.png"
+              alt="Content Engine — example short-form videos across platforms"
+              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
+            />
           </div>
 
         </div>
