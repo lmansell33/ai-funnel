@@ -177,32 +177,45 @@ export default function Home() {
       <section className="py-20 lg:py-28 px-6" style={{ background: "#fff" }}>
         <div className="max-w-4xl mx-auto flex flex-col gap-12">
 
-          {/* Left: copy */}
+          {/* Eyebrow */}
           <div>
-            <div className="mb-6">
-              <span
-                className="inline-block font-bold px-5 py-2 rounded-full"
-                style={{
-                  fontSize: "1.1rem",
-                  background: "var(--color-sage)",
-                  color: "var(--color-forest-dark)",
-                  border: "2px solid var(--color-sage-2)",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                Professional Services Businesses
-              </span>
-            </div>
-            <h1
-              className="font-bold leading-tight tracking-tight mb-6"
+            <span
+              className="inline-block font-bold px-6 py-3 rounded-full"
               style={{
-                fontSize: "clamp(2.1rem, 4.5vw, 3.25rem)",
-                color: "var(--color-text)",
-                lineHeight: 1.12,
+                fontSize: "1.35rem",
+                background: "var(--color-sage)",
+                color: "var(--color-forest-dark)",
+                border: "2px solid var(--color-sage-2)",
               }}
             >
-              Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
-            </h1>
+              Professional Services Businesses
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1
+            className="font-bold leading-tight tracking-tight"
+            style={{
+              fontSize: "clamp(2.1rem, 4.5vw, 3.25rem)",
+              color: "var(--color-text)",
+              lineHeight: 1.12,
+              marginTop: "-16px",
+            }}
+          >
+            Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
+          </h1>
+
+          {/* Hero image — between headline and subheadline */}
+          <div className="flex items-center justify-center">
+            <img
+              src="/hero-phones.png"
+              alt="Content Engine — example short-form videos across platforms"
+              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
+            />
+          </div>
+
+          {/* Subheadline + CTAs */}
+          <div>
             <p
               className="text-lg leading-relaxed mb-4"
               style={{ color: "var(--color-text-2)" }}
@@ -227,15 +240,6 @@ export default function Home() {
               <IconPhone />
               <span>Or Call: (954) 699-4950</span>
             </div>
-          </div>
-
-          {/* Hero image — full width below copy */}
-          <div className="flex items-center justify-center">
-            <img
-              src="/hero-phones.png"
-              alt="Content Engine — example short-form videos across platforms"
-              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
-            />
           </div>
 
         </div>
