@@ -230,24 +230,42 @@ export default function Home() {
       </section>
 
       {/* ── 2. How the Content Engine Works ── */}
-      <section className="py-20 px-6" style={{ background: "var(--color-cream)" }}>
+      <section className="py-20 px-6" style={{ background: "var(--color-forest-dark)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
+            <p className="section-label mb-3" style={{ color: "var(--color-sage-2)" }}>
+              The Process
+            </p>
             <h2
               className="font-bold"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "var(--color-text)" }}
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff" }}
             >
               How the Content Engine Works
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {howSteps.map((step) => (
-              <div key={step.num} className="card">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center mb-5"
-                  style={{ background: "var(--color-forest)", color: "#fff" }}
-                >
-                  <span className="text-sm font-bold">{step.num}</span>
+              <div
+                key={step.num}
+                className="rounded-2xl p-7 flex flex-col"
+                style={{
+                  background: "#ffffff",
+                  borderTop: "4px solid var(--color-forest)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
+                }}
+              >
+                {/* Large step number */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span
+                    className="font-bold leading-none"
+                    style={{
+                      fontSize: "3.5rem",
+                      color: "var(--color-sage)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {step.num.padStart(2, "0")}
+                  </span>
                 </div>
                 <h3
                   className="font-bold text-lg mb-3"
