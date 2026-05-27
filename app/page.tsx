@@ -22,23 +22,23 @@ function IconPhone() {
 const howSteps = [
   {
     num: "1",
-    title: "Plan",
-    body: "We map out your content topics, talking points, questions, and scripts so you know exactly what to say before the camera turns on.",
+    title: "We Create the Ideas",
+    body: "We help create topics that speak directly to your ideal customer and position your business as the premier choice to solve their problem.",
   },
   {
     num: "2",
-    title: "Shoot",
-    body: "Our production team films a focused content session designed to capture your expertise in a natural, professional way.",
+    title: "We Make You Look Good",
+    body: "We specialize in making you look natural on camera while positioning you as the expert you already are.",
   },
   {
     num: "3",
-    title: "Repurpose",
-    body: "We turn the footage into a full library of content for your website, email, social media, YouTube, and other marketing channels.",
+    title: "We Multiply the Content",
+    body: "One session becomes Reels, blogs, emails, social posts, carousel posts, and platform-ready assets.",
   },
   {
     num: "4",
-    title: "Post",
-    body: "We organize, schedule, and post the content so your business stays consistent without you having to manage every detail.",
+    title: "We Post It for You",
+    body: "We organize, schedule, and publish the content so you stay visible without managing the entire process yourself.",
   },
 ];
 
