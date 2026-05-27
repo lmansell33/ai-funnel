@@ -201,7 +201,7 @@ export default function Home() {
               paddingRight: "60px",
             }}
           >
-            Turn a 1 Hour Shoot into 100+ Pieces of Video &amp; Written Content Among Many Platforms
+            Turn One Video Session Into 100+ Pieces of Content
           </h1>
 
           {/* Subheadline */}
@@ -209,7 +209,7 @@ export default function Home() {
             className="text-lg leading-relaxed"
             style={{ color: "var(--color-text-2)", maxWidth: "680px" }}
           >
-            Our Content Engine turns one focused shoot into videos, blogs, emails, captions, hashtags, social posts, and platform-ready assets — planned, filmed, repurposed, and posted for you.
+            Upload your footage or let us shoot it for you. Our Content Engine turns one focused video session into Reels, Shorts, blogs, emails, captions, hashtags, and social posts — organized and ready to publish.
           </p>
 
           {/* Hero image */}
@@ -223,7 +223,7 @@ export default function Home() {
 
           {/* CTA */}
           <a href="/book-call" className="btn-primary">
-            Schedule Your Free Content Strategy Session
+            Book Free Strategy Call
           </a>
 
           {/* Phone */}
@@ -340,7 +340,7 @@ export default function Home() {
               We help you create content that answers real questions, explains your services, builds credibility, and positions your business as a trusted authority in your market.
             </p>
             <a href="/book-call" className="btn-primary">
-              Schedule Your Free Content Strategy Session
+              Book Free Strategy Call
             </a>
           </div>
           <div>
@@ -508,7 +508,7 @@ export default function Home() {
               marginBottom: "16px",
             }}
           >
-            Schedule Your Free Content Strategy Session
+            Book Free Strategy Call
           </a>
           <div
             className="flex items-center justify-center gap-2 text-sm"
