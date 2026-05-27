@@ -213,7 +213,7 @@ export default function Home() {
           </p>
 
           {/* Hero image */}
-          <div className="w-full flex items-center justify-center" style={{ marginTop: "-8px", marginBottom: "-8px" }}>
+          <div className="w-full flex items-center justify-center" style={{ marginTop: "-16px", marginBottom: "-16px" }}>
             <img
               src="/hero-diagram.png"
               alt="One content shoot becomes blog articles, email articles, short-form reels, captions, and social posts"
