@@ -181,10 +181,12 @@ export default function Home() {
           <div>
             <div className="mb-6">
               <span
-                className="inline-block font-bold text-base px-5 py-2.5 rounded-lg"
+                className="inline-block font-bold px-5 py-2 rounded-full"
                 style={{
-                  background: "var(--color-forest)",
-                  color: "#ffffff",
+                  fontSize: "1.1rem",
+                  background: "var(--color-sage)",
+                  color: "var(--color-forest-dark)",
+                  border: "2px solid var(--color-sage-2)",
                   letterSpacing: "0.01em",
                 }}
               >
