@@ -217,7 +217,7 @@ export default function Home() {
             <img
               src="/hero-diagram.png"
               alt="One content shoot becomes blog articles, email articles, short-form reels, captions, and social posts"
-              style={{ width: "100%", maxWidth: "680px", height: "auto", display: "block" }}
+              style={{ width: "100%", maxWidth: "816px", height: "auto", display: "block" }}
             />
           </div>
 
