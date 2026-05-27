@@ -97,6 +97,94 @@ body {
   position: relative;
 }
 
+/* ── Mobile responsive ─────────────────────────────────────────── */
+
+/* Nav */
+.nav-inner {
+  height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.nav-logo {
+  font-size: 14px;
+}
+.nav-cta {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+/* Hero section */
+.hero-section {
+  padding-top: 36px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.hero-gap {
+  gap: 16px;
+}
+
+/* Hero pill */
+.hero-pill {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Hero headline */
+.hero-h1 {
+  font-size: 36px;
+  line-height: 1.12;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Hero subheadline */
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+/* Hero image */
+.hero-img {
+  width: 95%;
+  max-width: 816px;
+}
+
+/* Hero CTA */
+.hero-cta {
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+@media (min-width: 640px) {
+  .nav-inner   { height: 64px; padding-left: 24px; padding-right: 24px; }
+  .nav-logo    { font-size: 16px; }
+  .nav-cta     { font-size: 14px; padding: 10px 20px; }
+
+  .hero-section { padding-top: 48px; padding-bottom: 40px; padding-left: 24px; padding-right: 24px; }
+  .hero-gap    { gap: 20px; }
+
+  .hero-pill   { font-size: 1.35rem; padding: 12px 24px; }
+  .hero-h1     { font-size: clamp(2rem, 4.5vw, 3.1rem); padding-left: 60px; padding-right: 60px; }
+  .hero-sub    { font-size: 18px; line-height: 1.65; max-width: 680px; }
+  .hero-img    { width: 100%; }
+  .hero-cta    { width: auto; max-width: none; font-size: 15px; padding: 14px 28px; }
+}
+
+/* Tighter section padding on mobile */
+@media (max-width: 639px) {
+  .py-20 { padding-top: 48px !important; padding-bottom: 48px !important; }
+  .py-24 { padding-top: 52px !important; padding-bottom: 52px !important; }
+  .mb-12 { margin-bottom: 28px !important; }
+  .mb-14 { margin-bottom: 32px !important; }
+  .gap-5 { gap: 14px !important; }
+  .gap-6 { gap: 14px !important; }
+}
+
 /* Check list */
 .check-list {
   list-style: none;

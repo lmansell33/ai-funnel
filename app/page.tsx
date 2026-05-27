@@ -148,16 +148,13 @@ export default function Home() {
           borderBottom: "1px solid var(--color-border-2)",
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 text-decoration-none">
-            <span
-              className="font-bold text-base tracking-tight"
-              style={{ color: "var(--color-forest)" }}
-            >
+        <div className="nav-inner max-w-6xl mx-auto flex items-center justify-between">
+          <a href="/" style={{ textDecoration: "none" }}>
+            <span className="nav-logo font-bold tracking-tight" style={{ color: "var(--color-forest)" }}>
               Mansell Productions
             </span>
           </a>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href="tel:+19546994950"
               className="hidden sm:flex items-center gap-2 text-sm font-medium"
@@ -166,22 +163,21 @@ export default function Home() {
               <IconPhone />
               (954) 699-4950
             </a>
-            <a href="/book-call" className="btn-primary" style={{ padding: "10px 20px", fontSize: "14px" }}>
-              Create Sales-Generating Content Now!
+            <a href="/book-call" className="btn-primary nav-cta">
+              Book Call
             </a>
           </div>
         </div>
       </nav>
 
       {/* ── 1. Hero ── */}
-      <section className="px-6 text-center" style={{ background: "#fff", paddingTop: "48px", paddingBottom: "40px" }}>
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-5">
+      <section className="hero-section text-center" style={{ background: "#fff" }}>
+        <div className="hero-gap max-w-4xl mx-auto flex flex-col items-center">
 
           {/* Eyebrow */}
           <span
-            className="inline-block font-bold px-6 py-3 rounded-full"
+            className="hero-pill inline-block font-bold rounded-full"
             style={{
-              fontSize: "1.35rem",
               background: "var(--color-sage)",
               color: "var(--color-forest-dark)",
               border: "2px solid var(--color-sage-2)",
@@ -192,44 +188,39 @@ export default function Home() {
 
           {/* Headline */}
           <h1
-            className="font-bold tracking-tight"
-            style={{
-              fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
-              color: "var(--color-text)",
-              lineHeight: 1.12,
-              paddingLeft: "60px",
-              paddingRight: "60px",
-            }}
+            className="hero-h1 font-bold tracking-tight"
+            style={{ color: "var(--color-text)" }}
           >
             Turn One Video Session Into 100+ Pieces of Content
           </h1>
 
           {/* Subheadline */}
           <p
-            className="text-lg leading-relaxed"
-            style={{ color: "var(--color-text-2)", maxWidth: "680px" }}
+            className="hero-sub"
+            style={{ color: "var(--color-text-2)" }}
           >
             Upload your footage or let us shoot it for you. Our Content Engine turns one focused video session into Reels, Shorts, blogs, emails, captions, hashtags, and social posts — organized and ready to publish.
           </p>
 
           {/* Hero image */}
-          <div className="w-full flex items-center justify-center" style={{ marginTop: "8px", marginBottom: "8px" }}>
+          <div className="flex items-center justify-center" style={{ width: "100%", marginTop: "4px", marginBottom: "4px" }}>
             <img
               src="/hero-diagram.png"
               alt="One content shoot becomes blog articles, email articles, short-form reels, captions, and social posts"
-              style={{ width: "100%", maxWidth: "816px", height: "auto", display: "block" }}
+              className="hero-img"
+              style={{ height: "auto", display: "block" }}
             />
           </div>
 
           {/* CTA */}
-          <a href="/book-call" className="btn-primary">
-            Create Sales-Generating Content Now!
+          <a href="/book-call" className="btn-primary hero-cta">
+            Book Free Strategy Call
           </a>
 
           {/* Phone */}
           <div
-            className="flex items-center justify-center gap-2 text-sm font-medium"
-            style={{ color: "var(--color-text-2)" }}
+            className="flex items-center justify-center gap-2 font-medium"
+            style={{ color: "var(--color-text-2)", fontSize: "14px" }}
           >
             <IconPhone />
             <span>Or Call: (954) 699-4950</span>
