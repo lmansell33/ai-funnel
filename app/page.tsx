@@ -175,7 +175,7 @@ export default function Home() {
 
       {/* ── 1. Hero ── */}
       <section className="py-20 lg:py-28 px-6" style={{ background: "#fff" }}>
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-4xl mx-auto flex flex-col gap-12">
 
           {/* Left: copy */}
           <div>
@@ -227,12 +227,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: hero image */}
+          {/* Hero image — full width below copy */}
           <div className="flex items-center justify-center">
             <img
               src="/hero-phones.png"
               alt="Content Engine — example short-form videos across platforms"
-              style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block" }}
+              style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block" }}
             />
           </div>
 
