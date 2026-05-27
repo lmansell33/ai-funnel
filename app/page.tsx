@@ -167,7 +167,7 @@ export default function Home() {
               (954) 699-4950
             </a>
             <a href="/book-call" className="btn-primary" style={{ padding: "10px 20px", fontSize: "14px" }}>
-              Book Free Strategy Call
+              Create Sales-Generating Content Now!
             </a>
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function Home() {
 
           {/* CTA */}
           <a href="/book-call" className="btn-primary">
-            Book Free Strategy Call
+            Create Sales-Generating Content Now!
           </a>
 
           {/* Phone */}
@@ -340,7 +340,7 @@ export default function Home() {
               We help you create content that answers real questions, explains your services, builds credibility, and positions your business as a trusted authority in your market.
             </p>
             <a href="/book-call" className="btn-primary">
-              Book Free Strategy Call
+              Create Sales-Generating Content Now!
             </a>
           </div>
           <div>
@@ -508,7 +508,7 @@ export default function Home() {
               marginBottom: "16px",
             }}
           >
-            Book Free Strategy Call
+            Create Sales-Generating Content Now!
           </a>
           <div
             className="flex items-center justify-center gap-2 text-sm"
