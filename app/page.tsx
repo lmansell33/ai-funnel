@@ -215,8 +215,8 @@ export default function Home() {
           {/* Hero image */}
           <div className="w-full flex items-center justify-center">
             <img
-              src="/hero-phones.png"
-              alt="Content Engine — example short-form videos across platforms"
+              src="/hero-diagram.png"
+              alt="One content shoot becomes blog articles, email articles, short-form reels, captions, and social posts"
               style={{ width: "100%", maxWidth: "680px", height: "auto", display: "block" }}
             />
           </div>
